@@ -1,0 +1,46 @@
+version: '2.3'
+services:
+#  db:
+  #    build:
+  #      context: ./mysql
+  #    environment:
+  #      MYSQL_ROOT_PASSWORD: root
+  #      MYSQL_DATABASE: take10dashboard
+  #      MYSQL_USER: docker
+  #      MYSQL_PASSWORD: docker
+  #    container_name: take10dashboard_db
+  #    ports:
+  #      - "3307:3306"
+  #    tty: true
+  app:
+    build:
+      context: .
+    volumes:
+      - "./Go:/go"
+    container_name: golang_app
+    ports:
+      - "8080:8080"
+    tty: true
+    network_mode: "host"
+    restart: always
+    #   depends_on:
+    #     - db
+    #   links:
+    #     - db
+    environment:
+      - ENV_DB_SERVER=localhost
+      - ENV_DB_DATABASE=take10dashboard
+      - ENV_DB_USERNAME=take10
+      - ENV_DB_PASSWORD=take10
+      - ENV_DB_PORT=3306
+      - ENV_DB_DEBUG=true
+      - ENV_KAFKA_IP=127.0.0.1
+      - ENV_KAFKA_PORT=9092
+      - ENV_KAFKA_TOPIC=test
+      - ENV_APP_PORT=0.0.0.0:8080
+      - ENV_APP_PROXY=
+      - ENV_APP_ENVIRONMENT=development
+    logging:
+      driver: local
+      options:
+        max-size: "100mb"

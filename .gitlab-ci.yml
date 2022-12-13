@@ -1,0 +1,16 @@
+stages:
+  - build
+build:
+  stage: build
+  image: golang:1.19.2
+  before_script:
+    # Create a symbolic link under $GOPATH, this is needed for local build
+    # i.e. /go/src/gitlab.com/ykyuen/gitlab-ci-go-build
+
+
+  script:
+    - docker image prune -f
+    - docker-compose -f docker-compose.yml build --no-cache
+    - docker-compose -f docker-compose.yml up -d
+  only:
+    - production
