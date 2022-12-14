@@ -2,11 +2,11 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
+	"github.com/hamedkazemi/tinytik/common"
+	"github.com/hamedkazemi/tinytik/docs"
+	"github.com/hamedkazemi/tinytik/modules/links"
 	"github.com/sirupsen/logrus"
 	_ "github.com/swaggo/gin-swagger"
-	"gitlab.com/kafa1942/take10dashboard/common"
-	"gitlab.com/kafa1942/take10dashboard/docs"
-	"gitlab.com/kafa1942/take10dashboard/links"
 )
 
 func main() {

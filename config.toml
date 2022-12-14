@@ -1,14 +1,14 @@
 [database]
 server = "127.0.0.1" # Mysql Database Server
 port = "3306" # Mysql Database Port
-database = "take10dashboardFull" # Mysql Database Name
+database = "tinytik" # Mysql Database Name
 user = "root" # Mysql Database User
-password = "root" # Mysql Database Password
+password = "" # Mysql Database Password
 debug = true # Mysql Database Debug
 
 [app]
-name = "Take10Dashboard" # Application Name
-description = "Take10Triva Dashboard API"
+name = "TinyTik" # Application Name
+description = "TinyTik API"
 host = "0.0.0.0:8080" # Application Port And IP
 proxy = "" # Outgoing Proxy
 environment = "development" # development,production

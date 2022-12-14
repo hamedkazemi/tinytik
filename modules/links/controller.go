@@ -1,23 +1,16 @@
 package links
 
-import "github.com/gin-gonic/gin"
+import (
+	"fmt"
+	"github.com/gin-gonic/gin"
+)
 
-func Deletelink(context *gin.Context) {
-
-}
-
-func Createlink(context *gin.Context) {
-
-}
-
-func Updatelink(context *gin.Context) {
+func CreateLink(c *gin.Context) {
 
 }
 
-func Getlink(context *gin.Context) {
+func GetLink(c *gin.Context) {
+	t := c.Param("token")
 
-}
-
-func Getlinks(context *gin.Context) {
-
+	fmt.Printf("ids: %v \n", t)
 }
