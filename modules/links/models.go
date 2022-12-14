@@ -14,11 +14,9 @@ var (
 
 // Links Models should only be concerned with database schema, more strict checking should be put in validator.
 type Links struct {
-	ID        int64     `gorm:"column:id;primary_key" json:"id"`
+	Hash      string    `gorm:"column:hash;index:idx_hash;size:10;uniqueIndex;primary_key" json:"hash"`
 	URL       string    `gorm:"column:url" json:"url"`
-	Hash      string    `gorm:"column:hash;index:idx_hash,unique" json:"hash"`
 	CreatedAt time.Time `gorm:"column:created_at" json:"created_at"`
-	UpdateAt  time.Time `gorm:"column:update_at" json:"update_at"`
 }
 
 // TableName sets the insert table name for this struct type
