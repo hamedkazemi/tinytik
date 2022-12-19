@@ -5,6 +5,11 @@ type config struct {
 	App      app
 	Database database
 	Kafka    kafkaconfig
+	Redis    redis
+}
+
+type redis struct {
+	ConnectionString string
 }
 
 type database struct {

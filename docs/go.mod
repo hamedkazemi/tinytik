@@ -1,4 +1,4 @@
-module gitlab.com/kafa1942/take10dashboard/docs
+module github.com/hamedkazemi/tinytik/docs
 
 go 1.13
 

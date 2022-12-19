@@ -9,9 +9,12 @@ debug = true # Mysql Database Debug
 [app]
 name = "TinyTik" # Application Name
 description = "TinyTik API"
-host = "0.0.0.0:8080" # Application Port And IP
+host = "0.0.0.0:1010" # Application Port And IP
 proxy = "" # Outgoing Proxy
 environment = "development" # development,production
+
+[redis]
+connectionString = "127.0.0.1:6379"
 
 [kafka]
 ip = "" # Kafka IP ( ignored if empty, eg. 0.0.0.0 )

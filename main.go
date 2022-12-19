@@ -26,11 +26,11 @@ func main() {
 
 	// use kafka client
 	//common.KafkaCon()
-
+	
 	// init database and Migrate if needed
 	db := common.GetDB()
 	logrus.Info("Migrating db if needed...")
-	//Migrate()
+	migrate()
 	defer db.Close()
 
 	// init gin router
@@ -56,4 +56,8 @@ func main() {
 
 	logrus.Info("APP will be served at: " + common.Config.App.Host)
 	_ = r.Run(common.Config.App.Host)
+}
+
+func migrate() {
+	common.GetDB().Set("gorm:table_options", "ENGINE=InnoDB").AutoMigrate(&links.Links{})
 }

@@ -50,6 +50,10 @@ func init() {
 			Config.Kafka.Topic = os.Getenv("ENV_KAFKA_TOPIC")
 		}
 
+		if len(os.Getenv("ENV_REDIS")) > 0 {
+			Config.Redis.ConnectionString = os.Getenv("ENV_REDIS_CONNECTION_STRING")
+		}
+
 		// APP
 		if len(os.Getenv("ENV_APP_HOST")) > 0 {
 			Config.App.Host = os.Getenv("ENV_APP_HOST")

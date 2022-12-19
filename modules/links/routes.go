@@ -7,6 +7,6 @@ func ConfigGinLinksRouter(router *gin.Engine) {
 	//router.GET("/", GetLinks)
 	router.GET("/:token", GetLink)
 	//router.PATCH("/", UpdateLink)
-	router.POST("/shorten/:url", CreateLink)
+	router.POST("/shorten", PostLink)
 	//router.DELETE("/", DeleteLink)
 }
