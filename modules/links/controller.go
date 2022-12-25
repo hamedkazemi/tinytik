@@ -55,6 +55,7 @@ func PostLink(c *gin.Context) {
 
 func GetLink(c *gin.Context) {
 	t := c.Param("token")
+
 	cr := common.ConnectRedis()
 	defer cr.Close()
 	urlExist, _ := cr.Do(c, cr.B().Get().Key("TINYTIK_"+t).Build()).ToString()
