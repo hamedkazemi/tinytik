@@ -1,5 +1,5 @@
 
-> ### TinyTik API
+> ### TinyTik API - Very Simple Url Shortener written in Golang
 
 # How it works
 ```
