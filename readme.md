@@ -63,6 +63,9 @@ port = "0.0.0.0:8080" # Application Port And IP
 proxy = "" # Outgoing Proxy
 environment = "development" # development,production
 
+[redis]
+connectionString = "127.0.0.1:6379"
+
 [kafka]
 ip = "" # Kafka IP ( ignored if empty, eg. 0.0.0.0 )
 port = "" # Kafka Port ( ignored if empty, eg. 9092 )
