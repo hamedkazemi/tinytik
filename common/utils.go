@@ -7,8 +7,8 @@ import (
 	"encoding/hex"
 	"encoding/json"
 	"fmt"
-	"github.com/dgrijalva/jwt-go"
 	"github.com/go-playground/validator/v10"
+	"github.com/golang-jwt/jwt"
 	"github.com/jinzhu/gorm"
 	"github.com/jxskiss/base62"
 	"github.com/sirupsen/logrus"
@@ -44,7 +44,6 @@ func RandString(n int) string {
 
 // NBSecretPassword Keep this two config private, it should not expose to open source
 const NBSecretPassword = "A String Very Very Very Strong!!@##$!@#$"
-const NBRandomPassword = "A String Very Very Very Niubilty!!@##$!@#4"
 
 // GenToken A Util function to generate jwt_token which can be used in the request header
 func GenToken(id uint, rule string) string {

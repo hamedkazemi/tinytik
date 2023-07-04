@@ -1,6 +1,6 @@
 # First stage: build the executable.
 # It is important that these ARG's are defined after the FROM statement
-FROM golang:1.19.2-alpine AS builder
+FROM golang:1.20-alpine AS builder
 
 # Add unprivileged user/group
 RUN mkdir /user && \
@@ -21,7 +21,7 @@ RUN apk add --no-cache ca-certificates git
 WORKDIR /src
 # Fetch dependencies first; they are less susceptible to change on every build
 # and will therefore be cached for speeding up the next build
-COPY ./go.mod ./go.sum ./
+COPY ./go.mod ./go.sum ./go.work ./
 # Import the code from the context.
 COPY ./config.toml ./
 
